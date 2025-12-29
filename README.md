@@ -231,7 +231,7 @@ To enhance time-based analysis and support trend identification, additional date
 
 - Average Discount: 16%
 
-![<img width="1254" height="142" KPIS src=](https://github.com/user-attachments/assets/c00396a5-4230-45f3-b001-9ad26602a85c)
+
 
   
 
