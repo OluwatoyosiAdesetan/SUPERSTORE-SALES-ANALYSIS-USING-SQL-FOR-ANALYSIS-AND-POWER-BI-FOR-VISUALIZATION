@@ -231,6 +231,11 @@ To enhance time-based analysis and support trend identification, additional date
 
 - Average Discount: 16%
 
+![KPIS](https://github.com/user-attachments/assets/c00396a5-4230-45f3-b001-9ad26602a85c)
+
+  
+
+
 **Insight:**
 
 The business demonstrates strong revenue performance with healthy overall profitability. However, the relatively high average discount indicates that a significant portion of sales growth is driven by price reductions, which may place pressure on long-term profit margins if not carefully managed.
