@@ -216,123 +216,107 @@ To enhance time-based analysis and support trend identification, additional date
   
 -	Month Number: Created to allow correct chronological sorting of months in visualizations and dashboards.
   
-## Data Analysis and Insights
+  
+### Data Analysis and Insights
 
-**1. Overall Business Performance**
-   
--	Total Revenue: 2.3M
-  
--	Total Profit: 286.45K
-  
--	Total Transactions: 9,986
-  
--	Total Quantity Sold: 37,844
-  
--	Average Discount: 16%
-  
-**Insight :**
+***1. Overall Business Performance***
 
-The business demonstrates strong revenue generation with healthy profitability. However, the relatively high average discount suggests that sales growth may be partially driven by price reductions, which could impact long-term margins.
+- Total Revenue: 2.3M
 
-**2. Monthly Revenue Trend and Seasonality**
-   
--	Revenue fluctuates across months rather than showing steady growth.
-  
--	November and December record noticeable spikes in revenue.
-  
--	Certain mid-year months experience lower sales performance
-  
-***Insight:***
+- Total Profit: 286.45K
 
-Sales exhibit clear seasonality, with higher revenue toward the end of the year. This trend likely reflects holiday shopping behavior and increased consumer spending during festive periods.
+- Total Transactions: 9,986
 
-**3. Sales by Customer Segment**
-   
--	The Consumer segment contributes the largest portion of total revenue.
-  
--	Corporate follows, while Home Office contributes the least.
-  
-**Insight :**
-The business relies heavily on consumer customers, creating a potential risk if demand declines. There is an opportunity to expand revenue by targeting corporate and home office customers more effectively.
+- Total Quantity Sold: 37,844
 
-**4. Sales by Shipping Mode**
-   
--	Standard Class shipping accounts for the majority of sales.
-  
--	Same Day and First Class shipping options are minimally used.
-  
-**Insight :**
+- Average Discount: 16%
 
-Customers appear to be price-sensitive, prioritizing lower shipping costs over faster delivery times.
+**Insight:**
 
-**6. Top-Selling Product Sub-Categories**
-   
-- Phones and Chairs generate the highest revenue.
-  
-- Tables and Binders underperform relative to other sub-categories.
-  
-**Insight :**
+The business demonstrates strong revenue performance with healthy overall profitability. However, the relatively high average discount indicates that a significant portion of sales growth is driven by price reductions, which may place pressure on long-term profit margins if not carefully managed.
 
-A small number of products drive a significant portion of total revenue, while some categories contribute less and may increase inventory holding costs.
+***2. Monthly Sales Trend and Seasonality***
 
-**8. Discount vs Profit Analysis**
-   
--	Higher discounts do not consistently lead to higher profits.
-  
--	In several instances, increased discounting corresponds with reduced profitability.
-  
-**Insight :**
+Sales performance varies across the year rather than following a consistent upward trend. Revenue peaks are most pronounced in November and December.
 
-Excessive discounting is eroding profit margins without guaranteeing proportional sales growth, indicating the need for a more strategic discount approach.
+**Insight:**
 
-### Data Visualization
+This pattern highlights clear seasonality, likely influenced by holiday shopping, promotional campaigns, and end-of-year purchasing behaviour. Strategic planning around these peak months can further maximize revenue.
 
-Power BI dashboards were developed to visualize:
+***3. Sales by Customer Segment***
 
--	Monthly revenue trends
--	Segment-wise sales distribution
--	Shipping mode usage
--	Product sub-category performance
--	Discount vs profit comparison
-These visuals enable stakeholders to quickly interpret trends and monitor performance.
+The Consumer segment generates the highest revenue.
+
+The Corporate segment follows closely.
+
+The Home Office segment contributes the least to total sales.
+
+**Insight:**
+
+Revenue is heavily concentrated within the consumer segment. This presents an opportunity to diversify income streams by developing targeted strategies to grow corporate and home office customer engagement.
+
+***4. Shipping Mode Analysis***
+
+Standard Class shipping is used most frequently.
+
+First Class and Same Day shipping options show minimal adoption.
+
+**Insight:**
+
+Customers prioritize affordability over delivery speed, indicating strong price sensitivity. Faster shipping options may require repositioning or incentives to increase adoption.
+
+***5. Top-Selling Product Sub-Categories***
+
+Phones and Chairs are the highest revenue-generating sub-categories.
+
+Tables and Binders show comparatively weaker performance.
+
+**Insight:**
+
+Sales are concentrated in a limited number of high-performing sub-categories, while some products contribute less value and may increase inventory holding costs without proportional returns.
+
+***6. Discount vs Profit Relationship***
+
+Analysis shows that higher discount levels do not consistently translate into higher profits. In many cases, increased discounts are associated with reduced profit margins.
+
+**Insight:**
+
+Current discounting strategies are not always effective and may be eroding profitability. A more targeted and data-driven discount approach could improve margin performance.
+
+
 
 ### Recommendations
-**1. Improve Weekend Sales (Based on Daily Revenue Insight)**
-•	Introduce weekend-only promotions or flash sales.
-•	Offer bundle deals or free shipping on Saturdays and Sundays.
-•	Run targeted weekend ads to increase engagement.
 
-**2. Optimize Discount Strategy**
-•	Reduce discounts on high-demand products (e.g., Phones, Chairs).
-•	Apply discounts strategically to low-performing categories only.
-•	Monitor profit margins closely when running promotions.
+**1. Improve Discount Strategy**
 
-**3. Leverage Seasonal Demand**
-•	Increase inventory and marketing spend before Q4 (Nov–Dec).
-•	Launch pre-season campaigns to maximize peak-period revenue
+The current discount level appears to reduce profit margins in some cases. Discounts should be applied selectively, focusing on low-performing products, off-peak periods, or specific customer segments rather than across all products.
 
-**4. Leverage High-Performing Days**
-•	Schedule major campaigns and product launches mid-week.
-•	Push email and social media marketing on Tuesdays–Thursdays.
+**2. Plan Around Seasonal Demand**
 
-**5. Strengthen Underperforming Categories**
-•	Re-evaluate pricing or product quality for Tables and Accessories.
-•	Consider bundling them with high-performing products.
-•	Reduce inventory holding costs for slow-moving items.
+Sales peak significantly toward the end of the year, especially in November and December. Inventory planning, staffing, and marketing campaigns should be aligned with these periods to maximize revenue while controlling costs.
 
-**5. Diversify Customer Segments**
-•	Create tailored offers for Corporate and Home Office customers.
-•	Offer bulk purchase discounts for business clients.
- 5. Encourage Premium Shipping Options
-•	Offer limited-time incentives for Same Day or First Class shipping.
-•	Promote faster shipping during peak seasons.
+**3. Grow Corporate and Home Office Sales**
 
-**6. Plan for Seasonal Demand**
-•	Prepare inventory ahead of high-performing months.
-•	Launch pre-season campaigns to maximize peak-period revenue.
+The business relies heavily on consumer customers. Targeted offers, bulk purchase deals, and customized pricing for corporate and home office customers could help increase revenue from these underutilized segments.
 
+**4. Optimize Shipping Options**
+
+Most customers prefer Standard Class shipping, indicating strong price sensitivity. Premium shipping options such as First Class and Same Day can be promoted through limited-time offers or bundled incentives to increase adoption.
+
+**5. Focus on High-Performing Products**
+
+Sub-categories such as Phones and Chairs generate the most revenue and should be prioritized in inventory and marketing efforts. Low-performing products like Tables and Binders should be reviewed to determine whether repricing, promotion, or removal is necessary.
+
+**6. Monitor Profitability More Closely**
+
+Regular analysis of profit trends at the product and discount level is recommended. This will help ensure that sales growth is not achieved at the expense of profitability.
+
+**7. Leverage Dashboards for Ongoing Decisions**
+
+Power BI dashboards should be used continuously to monitor key metrics such as revenue, profit, discounts, and shipping performance. This supports faster, data-driven decision-making and long-term business planning
 
 
 
 ### Conclusion
-This analysis demonstrates how structured data cleaning and exploratory analysis can uncover valuable insights from transactional data. By addressing data quality issues and analyzing customer, shipping, and temporal trends, the organization can make informed decisions that enhance efficiency, improve customer experience, and support long-term growth.
+
+This analysis demonstrates how structured data cleaning and exploratory analysis can uncover valuable insights from transactional data. By addressing data quality issues and analyzing customer, shipping, and temporal trends, the organization can make informed decisions that enhance efficiency, improve customer experience, and support long-term growth.By implementing these strategies, the business can drive sustainable growth, improve profitability, and make more informed decisions. Prioritizing high-performing products, optimizing discounts, and leveraging data insights will ensure both short-term gains and long-term resilience.
