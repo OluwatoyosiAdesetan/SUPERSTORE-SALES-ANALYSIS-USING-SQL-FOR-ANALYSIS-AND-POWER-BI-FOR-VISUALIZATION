@@ -1,2 +1,2 @@
-# SUPERSTORE-SALES-ANALYSIS-USING-SQL-FOR-ANALYSIS-AND-POWERBI-FOR-VISUALIZATION
+# SUPERSTORE-SALES-ANALYSIS-USING-SQL-FOR-ANALYSIS-AND-POWER-BI-FOR-VISUALIZATION
 An excel file showing transactional records from a retail superstore, capturing customer, order, shipment and location details and more. The goal of this analysis is to explore sales and profit patterns, understand customer and shipping behavior, and generate actionable insights that support data-driven business and operational decisions.
