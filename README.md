@@ -113,115 +113,226 @@ Before analysis, a thorough data cleaning process was carried out using SQL to e
 
 Steps taken include:
 
-- Checking For Missing Values
+**Checking For Missing Values**
+  
 A comprehensive missing values check was conducted across all columns in the dataset using a single SQL aggregation query. The query calculated the total number of records and the number of NULL values present in each column by applying conditional counting with CASE WHEN statements. This approach allowed for an efficient and structured evaluation of data completeness.
 
+```SQL
+--Checking null values in all the columns
+  SELECT
+    SUM(CASE WHEN Order_ID IS NULL THEN 1 ELSE 0 END) AS Missing_OrderID,
+    SUM(CASE WHEN Customer_ID IS NULL THEN 1 ELSE 0 END) AS Missing_CustomerID,
+    SUM(CASE WHEN Sales IS NULL THEN 1 ELSE 0 END) AS Missing_Sales,
+    SUM(CASE WHEN Profit IS NULL THEN 1 ELSE 0 END) AS Missing_Profit,
+    SUM(CASE WHEN Order_Date IS NULL THEN 1 ELSE 0 END) AS Missing_OrderDate,
+    SUM(CASE WHEN Ship_Mode IS NULL THEN 1 ELSE 0 END) AS Missing_Shipmode,
+    SUM(CASE WHEN Customer_Name IS NULL THEN 1 ELSE 0 END) AS Missing_CustName,
+    SUM(CASE WHEN Segment IS NULL THEN 1 ELSE 0 END) AS Missing_Segment,
+    SUM(CASE WHEN Country IS NULL THEN 1 ELSE 0 END) AS Missing_Country,
+    SUM(CASE WHEN City IS NULL THEN 1 ELSE 0 END) AS Missing_City,
+    SUM(CASE WHEN Postal_Code IS NULL THEN 1 ELSE 0 END) AS Missing_Postcode,
+    SUM(CASE WHEN Region IS NULL THEN 1 ELSE 0 END) AS Missing_Region,
+    SUM(CASE WHEN Product_ID IS NULL THEN 1 ELSE 0 END) AS Missing_Product_ID,
+    SUM(CASE WHEN Category IS NULL THEN 1 ELSE 0 END) AS Missing_Category,
+    SUM(CASE WHEN Sub_category IS NULL THEN 1 ELSE 0 END) AS Missing_Sub_Category,
+    SUM(CASE WHEN Product_Name IS NULL THEN 1 ELSE 0 END) AS Missing_ProductName,
+    SUM(CASE WHEN Quantity IS NULL THEN 1 ELSE 0 END) AS Missing_Qty
+FROM Superstore_sales;
+```
 
 The results provided a clear overview of columns containing missing values, enabling informed decisions on appropriate data cleaning strategies such as removal, imputation, or retention of NULL entries based on their relevance to the analysis. This step ensured improved data quality and reliability before proceeding to further analysis and modeling. A comprehensive missing values assessment was conducted across all columns in the dataset using a single SQL aggregation query with conditional counting. This approach enabled efficient identification of NULL values across the entire dataset.
 
 
-Handling Missing Profit Values
+**Handling Missing Profit Values**
+
 During this process, it was observed that the Profit column contained missing values. Since profit is a numerical field required for consistent financial analysis, all NULL entries in this column were replaced with zero (0). This decision was made to maintain a uniform numeric format and to ensure that records without recorded profit did not disrupt calculations, aggregations, or visualizations.
+
+```SQL
+--Replacing the nulls in the profit column
+UPDATE Superstore_sales
+SET profit = 0
+WHERE profit IS NULL;
+```
+
 After handling the missing values, the dataset was confirmed to be free of NULL values in critical fields, ensuring improved data quality and consistency for subsequent analysis and reporting.
-3.3 Identifying and Removing Duplicate Records
+
+
+**Identifying and Removing Duplicate Records**
+  
 Duplicate records were identified using a combination of Order ID, Product ID, and Customer ID. While these records shared identical values across most columns, they differed in the Profit field. These duplicates could inflate sales and profit figures if not addressed.
+```SQL
+--Checking duplicate values 
+SELECT Order_ID, Product_ID, Customer_ID, COUNT(*) AS duplicate_count
+FROM Superstore_sales
+GROUP BY Order_ID, Product_ID, Customer_ID
+HAVING COUNT(*) > 1;
+```
+
 To prevent inflated sales and profit figures, duplicates were resolved by retaining only the record with the highest profit and removing the others. This approach ensures that the most financially representative value is preserved and prevents distortion in profitability analysis.
+
 A CTE(Common Table Expression) with a ROWNUMBER() function was used to rank duplicates by profit in descending order, after which lower-ranked records were deleted. This step improved data accuracy and ensured reliable analytical results
 
-Checking for Invalid Numerical Values
+```SQL
+-- Keep the row with the highest Profit and delete duplicates
+WITH CTE AS (
+ SELECT *,
+      ROW_NUMBER() OVER (
+PARTITION BY Order_ID, Product_ID, Customer_ID
+ORDER BY Profit DESC) AS rn
+FROM Superstore_sales)
+DELETE FROM CTE
+WHERE rn > 1;
+```
+
+
+**Checking for Invalid Numerical Values**
+  
 Negative values in numerical columns such as Sales and Quantity were examined, as these could indicate data entry errors or returns.
 
-Date Consistency Check
+```SQL
+--Checking for negative values in the numerical columns
+SELECT *
+FROM Superstore_sales
+WHERE Quantity <0 OR Sales < 0
+```
+
+**Date Consistency Check**
+  
 To ensure logical consistency, records where the ship date occurred before the order date were identified and none was found .This cleaning process ensured the dataset was reliable and suitable for meaningful analysis
-ADDITION OF NEW COLUMNS
+
+```SQL
+SELECT COUNT(*) AS InvalidDateCount
+FROM Superstore_sales
+WHERE [Ship_Date] < [Order_Date];
+```
+
+***Addition Of New Columns***
+
 To enhance time-based analysis and support trend identification, additional date-related columns were created from the Order Date field. These include:
-•	Year: Extracted to enable yearly performance comparison and long-term trend analysis.
-•	Month: Added to support monthly sales, profit, and order volume analysis.
-•	Month Number: Created to allow correct chronological sorting of months in visualizations and dashboards.
-Data Analysis and Insights
-1. Overall Business Performance
-•	Total Revenue: 2.3M
-•	Total Profit: 286.45K
-•	Total Transactions: 9,986
-•	Total Quantity Sold: 37,844
-•	Average Discount: 16%
-Insight :
+
+-	Year: Extracted to enable yearly performance comparison and long-term trend analysis.
+  
+-	Month Name: Added to support monthly sales, profit, and order volume analysis.
+  
+-	Month Number: Created to allow correct chronological sorting of months in visualizations and dashboards.
+  
+## Data Analysis and Insights
+
+**1. Overall Business Performance**
+   
+-	Total Revenue: 2.3M
+  
+-	Total Profit: 286.45K
+  
+-	Total Transactions: 9,986
+  
+-	Total Quantity Sold: 37,844
+  
+-	Average Discount: 16%
+  
+**Insight :**
+
 The business demonstrates strong revenue generation with healthy profitability. However, the relatively high average discount suggests that sales growth may be partially driven by price reductions, which could impact long-term margins.
-2. Monthly Revenue Trend and Seasonality	
-•	Revenue fluctuates across months rather than showing steady growth.
-•	November and December record noticeable spikes in revenue.
-•	Certain mid-year months experience lower sales performance.
-Insight:
+
+**2. Monthly Revenue Trend and Seasonality**
+   
+-	Revenue fluctuates across months rather than showing steady growth.
+  
+-	November and December record noticeable spikes in revenue.
+  
+-	Certain mid-year months experience lower sales performance
+  
+***Insight:***
+
 Sales exhibit clear seasonality, with higher revenue toward the end of the year. This trend likely reflects holiday shopping behavior and increased consumer spending during festive periods.
 
-3. Sales by Customer Segment
-•	The Consumer segment contributes the largest portion of total revenue.
-•	Corporate follows, while Home Office contributes the least.
-Insight :
+**3. Sales by Customer Segment**
+   
+-	The Consumer segment contributes the largest portion of total revenue.
+  
+-	Corporate follows, while Home Office contributes the least.
+  
+**Insight :**
 The business relies heavily on consumer customers, creating a potential risk if demand declines. There is an opportunity to expand revenue by targeting corporate and home office customers more effectively.
 
-4 Sales by Shipping Mode
-•	Standard Class shipping accounts for the majority of sales.
-•	Same Day and First Class shipping options are minimally used.
-Insight :
+**4. Sales by Shipping Mode**
+   
+-	Standard Class shipping accounts for the majority of sales.
+  
+-	Same Day and First Class shipping options are minimally used.
+  
+**Insight :**
+
 Customers appear to be price-sensitive, prioritizing lower shipping costs over faster delivery times.
 
-5. Top-Selling Product Sub-Categories
-•	Phones and Chairs generate the highest revenue.
-•	Tables and Binders underperform relative to other sub-categories.
-Insight :
+**6. Top-Selling Product Sub-Categories**
+   
+- Phones and Chairs generate the highest revenue.
+  
+- Tables and Binders underperform relative to other sub-categories.
+  
+**Insight :**
+
 A small number of products drive a significant portion of total revenue, while some categories contribute less and may increase inventory holding costs.
 
-6. Discount vs Profit Analysis
-•	Higher discounts do not consistently lead to higher profits.
-•	In several instances, increased discounting corresponds with reduced profitability.
-Insight :
+**8. Discount vs Profit Analysis**
+   
+-	Higher discounts do not consistently lead to higher profits.
+  
+-	In several instances, increased discounting corresponds with reduced profitability.
+  
+**Insight :**
+
 Excessive discounting is eroding profit margins without guaranteeing proportional sales growth, indicating the need for a more strategic discount approach.
 
-Data Visualization
+### Data Visualization
+
 Power BI dashboards were developed to visualize:
-•	Monthly revenue trends
-•	Segment-wise sales distribution
-•	Shipping mode usage
-•	Product sub-category performance
-•	Discount vs profit comparison
+
+-	Monthly revenue trends
+-	Segment-wise sales distribution
+-	Shipping mode usage
+-	Product sub-category performance
+-	Discount vs profit comparison
 These visuals enable stakeholders to quickly interpret trends and monitor performance.
 
-Recommendations
- 1. Improve Weekend Sales (Based on Daily Revenue Insight)
+### Recommendations
+**1. Improve Weekend Sales (Based on Daily Revenue Insight)**
 •	Introduce weekend-only promotions or flash sales.
 •	Offer bundle deals or free shipping on Saturdays and Sundays.
 •	Run targeted weekend ads to increase engagement.
 
- 2. Optimize Discount Strategy
+**2. Optimize Discount Strategy**
 •	Reduce discounts on high-demand products (e.g., Phones, Chairs).
 •	Apply discounts strategically to low-performing categories only.
 •	Monitor profit margins closely when running promotions.
-3. Leverage Seasonal Demand
+
+**3. Leverage Seasonal Demand**
 •	Increase inventory and marketing spend before Q4 (Nov–Dec).
 •	Launch pre-season campaigns to maximize peak-period revenue
- 4. Leverage High-Performing Days
+
+**4. Leverage High-Performing Days**
 •	Schedule major campaigns and product launches mid-week.
 •	Push email and social media marketing on Tuesdays–Thursdays.
 
- 5. Strengthen Underperforming Categories
+**5. Strengthen Underperforming Categories**
 •	Re-evaluate pricing or product quality for Tables and Accessories.
 •	Consider bundling them with high-performing products.
 •	Reduce inventory holding costs for slow-moving items.
 
- 5. Diversify Customer Segments
+**5. Diversify Customer Segments**
 •	Create tailored offers for Corporate and Home Office customers.
 •	Offer bulk purchase discounts for business clients.
  5. Encourage Premium Shipping Options
 •	Offer limited-time incentives for Same Day or First Class shipping.
 •	Promote faster shipping during peak seasons.
 
- 6. Plan for Seasonal Demand
+**6. Plan for Seasonal Demand**
 •	Prepare inventory ahead of high-performing months.
 •	Launch pre-season campaigns to maximize peak-period revenue.
 
 
 
 
-Conclusion
+### Conclusion
 This analysis demonstrates how structured data cleaning and exploratory analysis can uncover valuable insights from transactional data. By addressing data quality issues and analyzing customer, shipping, and temporal trends, the organization can make informed decisions that enhance efficiency, improve customer experience, and support long-term growth.
