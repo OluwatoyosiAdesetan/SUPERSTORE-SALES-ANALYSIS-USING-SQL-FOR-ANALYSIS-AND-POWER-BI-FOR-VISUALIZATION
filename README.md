@@ -66,22 +66,22 @@ This report presents a comprehensive analysis of Superstore sales data, highligh
 
 ## Use Case
 Stakeholders benefiting from the Analysis
-1. Executive Management
+**1. Executive Management**
 -	Strategic planning using revenue and profit insights
   
 -	Identification of growth opportunities
   
-2. Sales and Marketing Teams
+**2. Sales and Marketing Teams**
 -	Customer segment targeting
   
 -	Discount and promotional optimization
   
-3. Operations and Logistics Teams
+**3. Operations and Logistics Teams**
 -	Shipping mode optimization
   
 -	Cost efficiency improvements
   
-4. Finance Teams
+**4. Finance Teams**
 - Profitability tracking
 -	Forecasting and budgeting support
 
