@@ -107,11 +107,16 @@ The dataset contains transactional and customer-related information, where each 
   
 -	Country, State, City – Geographic details of the order
 
-Data Cleaning and Preprocessing
+## Data Cleaning and Preprocessing
+
 Before analysis, a thorough data cleaning process was carried out using SQL to ensure accuracy, consistency, and reliability of insights.
+
 Steps taken include:
-Checking For Missing Values
-A comprehensive missing values check was conducted across all columns in the dataset using a single SQL aggregation query. The query calculated the total number of records and the number of NULL values present in each column by applying conditional counting with CASE WHEN statements. This approach allowed for an efficient and structured evaluation of data completeness without inspecting columns individually.
+
+- Checking For Missing Values
+A comprehensive missing values check was conducted across all columns in the dataset using a single SQL aggregation query. The query calculated the total number of records and the number of NULL values present in each column by applying conditional counting with CASE WHEN statements. This approach allowed for an efficient and structured evaluation of data completeness.
+
+
 The results provided a clear overview of columns containing missing values, enabling informed decisions on appropriate data cleaning strategies such as removal, imputation, or retention of NULL entries based on their relevance to the analysis. This step ensured improved data quality and reliability before proceeding to further analysis and modeling. A comprehensive missing values assessment was conducted across all columns in the dataset using a single SQL aggregation query with conditional counting. This approach enabled efficient identification of NULL values across the entire dataset.
 
 
