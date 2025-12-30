@@ -341,3 +341,9 @@ Power BI dashboards should be used continuously to monitor key metrics such as r
 ### Conclusion
 
 This analysis demonstrates how structured data cleaning and exploratory analysis can uncover valuable insights from transactional data. By addressing data quality issues and analyzing customer, shipping, and temporal trends, the organization can make informed decisions that enhance efficiency, improve customer experience, and support long-term growth.By implementing these strategies, the business can drive sustainable growth, improve profitability, and make more informed decisions. Prioritizing high-performing products, optimizing discounts, and leveraging data insights will ensure both short-term gains and long-term resilience.
+
+I am interested in a Data Analyst role where I can showcase my skills, turn raw data into insights, continue to learn, an organization I can grow with,where my work will make an imoact to the organization.
+You can reach me on oluwatoyosiadesetan@gmail.com
+
+THANK YOU!
+
