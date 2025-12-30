@@ -287,8 +287,8 @@ Phones and Chairs are the highest revenue-generating sub-categories.
 
 Tables and Binders show comparatively weaker performance.
 
+<img width="245" height="244" alt="Top 5 Selling Products By Sub Category" src="https://github.com/user-attachments/assets/6da68852-5cf8-4ae7-8913-5fa85d4d933e" />
 
-<img width="245" height="244" alt="Top 5 Selling Products By Sub Category" src="https://github.com/user-attachments/assets/f47cc401-9b88-45c7-977b-76a09123b0bb" />
 
 **Insight:**
 
