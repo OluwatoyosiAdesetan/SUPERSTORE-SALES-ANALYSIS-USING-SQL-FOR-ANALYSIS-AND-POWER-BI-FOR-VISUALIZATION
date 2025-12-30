@@ -232,6 +232,7 @@ To enhance time-based analysis and support trend identification, additional date
 - Average Discount: 16%
 
 
+![Dashboard](https://github.com/user-attachments/assets/4c176fe6-8561-485b-8f5c-9e018c4b909a)
 
   
 
@@ -243,6 +244,9 @@ The business demonstrates strong revenue performance with healthy overall profit
 ***2. Monthly Sales Trend and Seasonality***
 
 Sales performance varies across the year rather than following a consistent upward trend. Revenue peaks are most pronounced in November and December.
+
+![Total Revenue By Month](https://github.com/user-attachments/assets/1f8dd651-93a7-4462-990e-0728e3c2926a)
+
 
 **Insight:**
 
@@ -256,6 +260,9 @@ The Corporate segment follows closely.
 
 The Home Office segment contributes the least to total sales.
 
+![Sales By Segment](https://github.com/user-attachments/assets/4ba0352e-6be7-44dd-919f-5207c94ab333)
+
+
 **Insight:**
 
 Revenue is heavily concentrated within the consumer segment. This presents an opportunity to diversify income streams by developing targeted strategies to grow corporate and home office customer engagement.
@@ -265,6 +272,9 @@ Revenue is heavily concentrated within the consumer segment. This presents an op
 Standard Class shipping is used most frequently.
 
 First Class and Same Day shipping options show minimal adoption.
+
+![Sales By Ship Mode](https://github.com/user-attachments/assets/d8e7bf61-5d8d-40cd-bcfd-97f9e90278db)
+
 
 **Insight:**
 
@@ -276,6 +286,9 @@ Phones and Chairs are the highest revenue-generating sub-categories.
 
 Tables and Binders show comparatively weaker performance.
 
+![Top 5 Selling Products By Sub Category](https://github.com/user-attachments/assets/81d7f931-dfae-442d-8322-952f89c72623)
+
+
 **Insight:**
 
 Sales are concentrated in a limited number of high-performing sub-categories, while some products contribute less value and may increase inventory holding costs without proportional returns.
@@ -283,6 +296,9 @@ Sales are concentrated in a limited number of high-performing sub-categories, wh
 ***6. Discount vs Profit Relationship***
 
 Analysis shows that higher discount levels do not consistently translate into higher profits. In many cases, increased discounts are associated with reduced profit margins.
+
+![Discount Vs Profit](https://github.com/user-attachments/assets/845b6518-bb23-473f-b0e5-e6998d4fbe89)
+
 
 **Insight:**
 
