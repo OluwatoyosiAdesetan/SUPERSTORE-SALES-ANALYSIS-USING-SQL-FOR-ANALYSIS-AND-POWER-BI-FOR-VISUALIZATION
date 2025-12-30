@@ -229,10 +229,11 @@ To enhance time-based analysis and support trend identification, additional date
 
 - Total Quantity Sold: 37,844
 
-- Average Discount: 16%
+- Average Discount: 15.63%
+
+![Dashboard](https://github.com/user-attachments/assets/08462d68-cce3-41f9-959e-b0387b34dfd8)
 
 
-![Dashboard](https://github.com/user-attachments/assets/4c176fe6-8561-485b-8f5c-9e018c4b909a)
 
   
 
@@ -286,7 +287,7 @@ Phones and Chairs are the highest revenue-generating sub-categories.
 
 Tables and Binders show comparatively weaker performance.
 
-![Top 5 Selling Products By Sub Category](https://github.com/user-attachments/assets/81d7f931-dfae-442d-8322-952f89c72623)
+[<img width="245" height="244" alt="Top 5 Selling Products By Sub Category" src=]("https://github.com/user-attachments/assets/112c4464-4ef3-4f9b-86c3-bcd7776d6a03" />)
 
 
 **Insight:**
