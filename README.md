@@ -1,6 +1,9 @@
 # SUPERSTORE-SALES-ANALYSIS-USING-SQL-FOR-ANALYSIS-AND-POWER-BI-FOR-VISUALIZATION
 An excel file showing transactional records from a retail superstore, capturing customer, order, shipment and location details and more. The goal of this analysis is to explore sales and profit patterns, understand customer and shipping behavior, and generate actionable insights that support data-driven business and operational decisions.
 
+![Dashboard](https://github.com/user-attachments/assets/b0164e12-6563-4190-a563-70d45cf48617)
+
+
 ## Table of Contents
 -	Project Overview
   
@@ -231,11 +234,7 @@ To enhance time-based analysis and support trend identification, additional date
 
 - Average Discount: 15.63%
 
-![Dashboard](https://github.com/user-attachments/assets/08462d68-cce3-41f9-959e-b0387b34dfd8)
-
-
-
-  
+![KPIS](https://github.com/user-attachments/assets/10f8fa7c-833f-4c37-b57b-2812da62c901)
 
 
 **Insight:**
